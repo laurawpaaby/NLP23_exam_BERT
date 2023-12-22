@@ -38,7 +38,7 @@ python BERT/prep_df_for_distmBERT.py
 ```
 <br>
 <br>
-_Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab._
+_Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab_
 
 ### Step n.1 Hyperparameter Tuning
 We hyperparameter tune the nb-BERT-large model on the validation data prior to fine-tuning using `Optuna`. This step results in finding the optimal hyperparameters.  
