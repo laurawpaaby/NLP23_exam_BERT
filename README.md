@@ -25,8 +25,8 @@ To scrape the EB articles, run the following script:
 python scrape/scraping_eb.py
 ```
 
-### Step 4: Replace artist name and pronouns with the gender-neutral: "artist/artist's"
-To mask out names and pronouns in each article, run the following script:
+### Step 4: Replace Artist Name and Pronouns 
+To replace out names and pronouns of the artist in each article with the gender-neutral: "artist/artist's", run the following script:
 ```
 python analysis/mask_name_gender.py
 ```
