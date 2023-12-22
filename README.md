@@ -39,9 +39,10 @@ python BERT/prep_df_for_distmBERT.py
 <br>
 <br>
 _Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab._
+
 ### Step n.1 Hyperparameter Tuning
 We hyperparameter tune the nb-BERT-large model on the validation data prior to fine-tuning using `Optuna`. This step results in finding the optimal hyperparameters.  
-To execute this step, run the [OPTUNA VIRKER IKKE DUNNO WHY](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_BERT_large/nbL_OPTUNA_param_tune.ipynb) 
+To execute this step, run the [`nb_BERT_large/nbl_OPTUNA_param_tune.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_BERT_large/nbL_OPTUNA_param_tune.ipynb) 
 
 ### Step n.2: Fine-tuning and Classification
 We fine-tune the nb-BERT-large model with the hyperparameters found above on the validation data. The fine-tuned model yielding the lowest loss is found at step 174, epoch 3. We employ this model to the classification task on the test data. 
