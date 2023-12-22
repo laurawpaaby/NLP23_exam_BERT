@@ -31,36 +31,40 @@ python analysis/mask_name_gender.py
 
 ### Step n: nb-BERT-large 
  
-##### Step n.0 
-Preprocess data:
+### Step n.0 Data preprocessing
+To execute this step, run:
 ```
 python BERT/prep_df_for_distmBERT.py
 ```
 
 Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab. 
-
-##### Step n.1 Hyperparameter Tuning
+### Step n.1 Hyperparameter Tuning
 We hyperparameter tune the nb-BERT-large model on the validation data prior to fine-tuning using `Optuna`. This step results in finding the optimal hyperparameters.  
-
 To execute this step, run the `nb_large_model/nbL_OPTUNA_param_tune.ipynb`. 
 
-##### Step n.2: Fine-tuning and Classification
+### Step n.2: Fine-tuning and Classification
 We fine-tune the nb-BERT-large model with the hyperparameters found above on the validation data. The fine-tuned model yielding the lowest loss is found at step 174, epoch 3. We employ this model to the classification task on the test data. 
-
 To execute this step, run the `nb_large_model/nbL_Finetune_opt_param.ipynb`. 
 
-##### Step n.2: Classification with the Pre-fine-tuned Model.
+### Step n.3: Classification with the Pre-fine-tuned Model.
 We employ the model prior fine-tuning to the classification task on the test data. This model have never seen any of the data before. 
-
 To execute this step, run the `nb_large_model/nbL_pretrained_class.ipynb`. 
 
 Now the classification performance of the model prior to and post fine-tuning can be compared. 
 
-### Step n+1: Intergrated Gradients and Differentials 
+## Step n+1: Intergrated Gradients (IG) and Differentials 
 
+### Step n.8: IG from nb-BERT-large Prior to Fine-tuning
+We extract the _Intergrated Gradients_ from the nb-BERT-large model prior to fine-tuning. 
+To execute this step, run the `IG/IG_pretrained.ipynb`. 
 
-##### Step n.3:
-get the attention weigths somehow :D 
+### Step n.9: IG from nb-BERT-large Post Fine-tuning
+We extract the _Intergrated Gradients_ from the nb-BERT-large model post fine-tuning. Thus, the at checkpoint-174 is loaded and used for the extraction.  
+To execute this step, run the `IG/IG_nbl_FT.ipynb`. 
+
+### Step n.10: IG Differentials 
+We find the _Intergrated Gradients Differentials_ by substracting the absolute values found by the model prior to fine-tuning from the ones found post fine-tuning. This is done for male and female predictions respectively and visualised. 
+To execute this step, run the `IG/IG_DIFFERENTIALS.ipynb`. 
 
 
 
