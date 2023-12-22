@@ -19,13 +19,14 @@ URLs to all concert reviews from Ekstra Bladet were collected using webscraper.i
 
 ### Step 3: Scrape URLS
 
-To scrape the EB articles, run the following script
+To scrape the EB articles, run the following script:
 
 ```
 python scrape/scraping_eb.py
 ```
 
 ### Step 4: Replace artist name and pronouns with the gender-neutral: "artist/artist's"
+To mask out names and pronouns in each article, run the following script:
 ```
 python analysis/mask_name_gender.py
 ```
@@ -57,18 +58,18 @@ To execute this step, run the [`nb_BERT_large/nbL_pretrained_class.ipynb`](https
 
 Now the classification performance of the model prior to and post fine-tuning can be compared. 
 
-## 3. Intergrated Gradients (IG) and Differentials 🔦🔦🔦🔦
+## 3. Integrated Gradients (IG) and Differentials 🔦🔦🔦🔦
 
 ### Step 3.0: IG from nb-BERT-large Prior to Fine-tuning
-We extract the _Intergrated Gradients_ from the nb-BERT-large model prior to fine-tuning. 
+We extract the _Integrated Gradients_ from the nb-BERT-large model prior to fine-tuning. 
 To execute this step, run the [`IG/IG_pretrained.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_pretrained.ipynb). 
 
 ### Step 3.1: IG from nb-BERT-large Post Fine-tuning
-We extract the _Intergrated Gradients_ from the nb-BERT-large model post fine-tuning. Thus, the at checkpoint-174 is loaded and used for the extraction.  
+We extract the _Integrated Gradients_ from the nb-BERT-large model post fine-tuning. Thus, the at checkpoint-174 is loaded and used for the extraction.  
 To execute this step, run the [`IG/IG_nbl_FT.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_nbl_FT.ipynb).
 
 ### Step 3.2: IG Differentials 
-We find the _Intergrated Gradients Differentials_ by substracting the absolute values found by the model prior to fine-tuning from the ones found post fine-tuning. This is done for male and female predictions respectively and visualised. 
+We find the _Integrated Gradients Differentials_ by substracting the absolute values found by the model prior to fine-tuning from the ones found post fine-tuning. This is done for male and female predictions respectively and visualised. 
 To execute this step, run the [`IG/IG_DIFFERENTIALS.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_DIFFERENTIALS.ipynb).
 
 
