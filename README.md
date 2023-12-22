@@ -13,13 +13,16 @@ To run the scripts below, a virtual environment must be initiated containing the
 source setup.sh
 ```
 
-### Step 2: Fetch URLS & clean them
-JEG KAN IKKE LIGE LURE HVOR MEGET VI SKAL HAVE LIGGENDE HER ???!?!???
-```
-```
+### Step 2: Fetch URLS 
+URLs to all concert reviews from Ekstra Bladet were collected using webscraper.io. The scraped articles themselves are not shared on this repository, but all code used to fetch the articles are shared for transparency. The fetched URLs can be seen in the csv file `scrape/webscraper_eb_urls.csv`. 
+
 
 ### Step 3: Scrape URLS
+
+To scrape the EB articles, run the following script
+
 ```
+python scrape/scraping_eb.py
 ```
 
 ### Step 4: Replace artist name and pronouns with the gender-neutral: "artist/artist's"
