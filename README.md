@@ -1,6 +1,6 @@
 # NLP-EXAM-23
 The current repository holds the code for our exam project for the Natural Language Processing (NLP) exam at the Cognitive Science MSc 2023, Aarhus University. 
-Be aware, that this repository do not hold any data as we do not own it. However, the exact data we used can be extracted following the steps provided in the scraping pipeline, and this way the entire analysis can be replicated. 
+Be aware, that this repository do not hold any data as we do not own it. However, the exact data we used can be extracted following the steps provided in the scraping pipeline, and in this way the entire analysis can be replicated. 
 
 The project was developed by `Laura Paaby` and `Emma Olsen`. 
 
