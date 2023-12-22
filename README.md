@@ -29,7 +29,7 @@ python analysis/mask_name_gender.py
 
 
 
-### Step n: nb-BERT-large 
+# Step n: nb-BERT-large 
  
 ### Step n.0 Data preprocessing
 To execute this step, run:
@@ -53,7 +53,7 @@ To execute this step, run the [`nb_large_model/nbL_pretrained_class.ipynb`](http
 
 Now the classification performance of the model prior to and post fine-tuning can be compared. 
 
-## Step n+1: Intergrated Gradients (IG) and Differentials 
+# Step n+1: Intergrated Gradients (IG) and Differentials 
 
 ### Step n.8: IG from nb-BERT-large Prior to Fine-tuning
 We extract the _Intergrated Gradients_ from the nb-BERT-large model prior to fine-tuning. 
