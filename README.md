@@ -36,6 +36,7 @@ To execute this step, run:
 ```
 python BERT/prep_df_for_distmBERT.py
 ```
+found her []()
 
 Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab. 
 ### Step n.1 Hyperparameter Tuning
