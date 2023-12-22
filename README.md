@@ -41,15 +41,15 @@ python BERT/prep_df_for_distmBERT.py
 _Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab._
 ### Step n.1 Hyperparameter Tuning
 We hyperparameter tune the nb-BERT-large model on the validation data prior to fine-tuning using `Optuna`. This step results in finding the optimal hyperparameters.  
-To execute this step, run the [`nb_large_model/nbL_OPTUNA_param_tune.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_large_model/nbL_OPTUNA_param_tune.ipynb).  
+To execute this step, run the [`nb_BERT_large/nbL_OPTUNA_param_tune.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_large_model/nbL_OPTUNA_param_tune.ipynb).  
 
 ### Step n.2: Fine-tuning and Classification
 We fine-tune the nb-BERT-large model with the hyperparameters found above on the validation data. The fine-tuned model yielding the lowest loss is found at step 174, epoch 3. We employ this model to the classification task on the test data. 
-To execute this step, run the [`nb_large_model/nbL_Finetune_opt_param.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_large_model/nbL_Finetune_opt_param.ipynb). 
+To execute this step, run the [`nb_BERT_large/nbL_Finetune_opt_param.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_large_model/nbL_Finetune_opt_param.ipynb). 
 
 ### Step n.3: Classification with the Pre-fine-tuned Model.
 We employ the model prior fine-tuning to the classification task on the test data. This model have never seen any of the data before. 
-To execute this step, run the [`nb_large_model/nbL_pretrained_class.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_large_model/nbL_pretrained_class.ipynb). 
+To execute this step, run the [`nb_BERT_large/nbL_pretrained_class.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_large_model/nbL_pretrained_class.ipynb). 
 
 Now the classification performance of the model prior to and post fine-tuning can be compared. 
 
