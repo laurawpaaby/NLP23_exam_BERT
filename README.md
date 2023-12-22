@@ -37,7 +37,7 @@ To execute this step, run:
 python BERT/prep_df_for_distmBERT.py
 ```
 <br>
-<br>
+
 _Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab_
 
 ### Step 2.1 Hyperparameter Tuning
