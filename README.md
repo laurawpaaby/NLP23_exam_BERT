@@ -1,16 +1,20 @@
 # NLP-EXAM-23
 The current repository holds the code for our exam project for the Natural Language Processing (NLP) exam at the Cognitive Science MSc 2023, Aarhus University. 
+Be aware, that this repository do not hold any data as we do not own it. However, the exact data we used can be extracted following the steps provided in the scraping pipeline, and this way the entire analysis can be replicated. 
 
 The project was developed by `Laura Paaby` and `Emma Olsen`. 
 
 ## Pipeline
 
+## 1. Data Extraction 
 ### Step 1: Activate environment
+To run the scripts below, a virtual environment must be initiated containing the installments required. 
 ```
 source setup.sh
 ```
 
 ### Step 2: Fetch URLS & clean them
+JEG KAN IKKE LIGE LURE HVOR MEGET VI SKAL HAVE LIGGENDE HER ???!?!???
 ```
 ```
 
@@ -18,20 +22,16 @@ source setup.sh
 ```
 ```
 
-### Step 4: Extract Information from URLS using Mistral
-```
-```
-
-### Step 5: Replace artist name and pronouns with the gender-neutral: "artist/artist's"
+### Step 4: Replace artist name and pronouns with the gender-neutral: "artist/artist's"
 ```
 python analysis/mask_name_gender.py
 ```
 
 
 
-## Step n: nb-BERT-large 🤖🤖🤖🤖🤖
+## 2. nb-BERT-large 🤖🤖🤖🤖🤖
  
-### Step n.0 Data preprocessing
+### Step 2.0 Data preprocessing
 To execute this step, run:
 ```
 python BERT/prep_df_for_distmBERT.py
@@ -40,31 +40,31 @@ python BERT/prep_df_for_distmBERT.py
 <br>
 _Now we are leaving scripts behind, and enter the realm of notebooks, as the remaining parts have been executed in Google Colab_
 
-### Step n.1 Hyperparameter Tuning
+### Step 2.1 Hyperparameter Tuning
 We hyperparameter tune the nb-BERT-large model on the validation data prior to fine-tuning using `Optuna`. This step results in finding the optimal hyperparameters.  
 To execute this step, run the [`nb_BERT_large/nbl_OPTUNA_param_tune.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_BERT_large/nbL_OPTUNA_param_tune.ipynb) 
 
-### Step n.2: Fine-tuning and Classification
+### Step 2.2: Fine-tuning and Classification
 We fine-tune the nb-BERT-large model with the hyperparameters found above on the validation data. The fine-tuned model yielding the lowest loss is found at step 174, epoch 3. We employ this model to the classification task on the test data. 
 To execute this step, run the [`nb_BERT_large/nbL_Finetune_opt_param.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_BERT_large/nbL_Finetune_opt_param.ipynb)
 
-### Step n.3: Classification with the Pre-fine-tuned Model.
+### Step 2.3: Classification with the Pre-fine-tuned Model.
 We employ the model prior fine-tuning to the classification task on the test data. This model have never seen any of the data before. 
 To execute this step, run the [`nb_BERT_large/nbL_pretrained_class.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/nb_BERT_large/nbL_Pretrained_class.ipynb) 
 
 Now the classification performance of the model prior to and post fine-tuning can be compared. 
 
-## Step n+1: Intergrated Gradients (IG) and Differentials 🔦🔦🔦🔦
+## 3. Intergrated Gradients (IG) and Differentials 🔦🔦🔦🔦
 
-### Step n.8: IG from nb-BERT-large Prior to Fine-tuning
+### Step 3.0: IG from nb-BERT-large Prior to Fine-tuning
 We extract the _Intergrated Gradients_ from the nb-BERT-large model prior to fine-tuning. 
 To execute this step, run the [`IG/IG_pretrained.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_pretrained.ipynb). 
 
-### Step n.9: IG from nb-BERT-large Post Fine-tuning
+### Step 3.1: IG from nb-BERT-large Post Fine-tuning
 We extract the _Intergrated Gradients_ from the nb-BERT-large model post fine-tuning. Thus, the at checkpoint-174 is loaded and used for the extraction.  
 To execute this step, run the [`IG/IG_nbl_FT.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_nbl_FT.ipynb).
 
-### Step n.10: IG Differentials 
+### Step 3.2: IG Differentials 
 We find the _Intergrated Gradients Differentials_ by substracting the absolute values found by the model prior to fine-tuning from the ones found post fine-tuning. This is done for male and female predictions respectively and visualised. 
 To execute this step, run the [`IG/IG_DIFFERENTIALS.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_DIFFERENTIALS.ipynb).
 
