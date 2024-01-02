@@ -65,7 +65,7 @@ We extract the _Integrated Gradients_ from the nb-BERT-large model prior to fine
 To execute this step, run the [`IG/IG_pretrained.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_pretrained.ipynb). 
 
 ### Step 3.1: IG from nb-BERT-large Post Fine-tuning
-We extract the _Integrated Gradients_ from the nb-BERT-large model post fine-tuning. Thus, the at checkpoint-174 is loaded and used for the extraction.  
+We extract the _Integrated Gradients_ from the nb-BERT-large model post fine-tuning. Thus, the model at checkpoint-174 is loaded and used for the extraction.  
 To execute this step, run the [`IG/IG_nbl_FT.ipynb`](https://github.com/laurawpaaby/NLP23_exam_BERT/blob/main/IG/IG_nbl_FT.ipynb).
 
 ### Step 3.2: IG Differentials 
